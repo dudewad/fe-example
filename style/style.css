@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: sans-serif;
+	min-height: 100%;
+	margin: 0;
+
+}
+
+header h1 {
+	margin: 0;
+	padding: .25em;
+}
+
+button,
+select {
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+	outline: none !important;
+}
+
+button[disabled] {
+	cursor: not-allowed;
+}
+
+label{
+	display: block;
+	margin-bottom: .5em;
+}
+
+.sel-group {
+	display: inline-block;
+	margin: 0 1em 1em 1em;
+}
+
+.loading {
+	color: #FFF;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 100%;
+	width: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, .8);
+}
+
+.loading h2 {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+
+
+@font-face {
+	font-family: "alt";
+	src: url("../asset/sw.ttf");
+	font-style: normal;
+}
+
+.m {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 100%;
+	width: 100%;
+	z-index: 1;
+	background: rgba(0,0,0,.8);
+	color: #FFD700;
+}
+
+.m,
+.sw h1 {
+	font-family: alt, sans-serif;
+}
+
+.m .w {
+	margin: 0 auto;
+	width: 75%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+
+.sw {
+	background: url('../asset/s.jpg') #000;
+	background-size: cover;
+	color: #FFD700;
+	overflow: hidden;
+}
+
+.sw header h1 {
+	display: none;
+}
+
+.sw h1 {
+	font-size: 5em;
+	border: 5px solid;
+	display: inline-block;
+	padding: 0 .5em .15em .5em;
+	border-radius: .25em;
+	line-height: 1.25;
+}
+
+.sw option {
+	background-color: #000;
+}
+
+.sw button,
+.sw select,
+.m button {
+	margin: 0 2em 1em 0;
+	border: 4px solid #FFD700;
+	padding: .5em 1em;
+	background: transparent;
+	color: #FFD700;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.sw button {
+	margin: .5em;
+}
+
+.sw button[disabled] {
+	color: #999;
+	border-color: #999;
+}
+
+.sw .m {
+	display: none !important;
+}
+
+.sw .data-container {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	perspective-origin: 50%;
+	perspective: 500px;
+}
+
+.sw .data-display {
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	text-align: center;
+	transform: rotateX(25deg);
+	animation: s 5s linear;
+}
+
+.sw .data-display p{
+	max-width: 75%;
+	margin: 0 auto;
+}
+
+@keyframes s {
+	0% {
+		transform: rotateX(25deg) translateY(0);
+	}
+	90% {
+		opacity: 1
+	}
+	100% {
+		opacity: 0;
+		transform: rotateX(25deg) translateY(-700%);
+	}
+}
